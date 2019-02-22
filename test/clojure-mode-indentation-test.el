@@ -110,6 +110,10 @@ values of customisable variables."
 (->> expr
      |ala)")
 
+(check-indentation no-indent-for-def-string
+  "(def foo \"hello|\")"
+  "(def foo \"hello|\")")
+
 (check-indentation threading-with-expression-on-second-line
   "
 (->>

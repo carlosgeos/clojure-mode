@@ -81,7 +81,9 @@
   :link '(url-link :tag "GitHub" "https://github.com/clojure-emacs/clojure-mode")
   :link '(emacs-commentary-link :tag "Commentary" "clojure-mode"))
 
-(defconst clojure-mode-version (lm-version)
+(defconst clojure-mode-version
+  (eval-when-compile
+    (lm-version (or load-file-name buffer-file-name)))
   "The current version of `clojure-mode'.")
 
 (defface clojure-keyword-face
